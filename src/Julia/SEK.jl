@@ -24,8 +24,8 @@ function parse_commandline()
 			help = "nu parameter: specifies the tolerance required to adjudge the SEK algorithm having converged. Default = 0.00001"
 			default = 0.00001;
 		"--I", "-I"
-			help = "The I parameter specifies the maximum sparsity of the returned result. Default = 409"
-			default = 409;
+			help = "The I parameter specifies the maximum sparsity of the returned result. Default = 100"
+			default = 100;
 		"--kmer_count_path", "-k"
 			help = "Full path to the kmer_total_count file obtained from https://github.com/mutantturkey/dna-utils"
 			default = "kmer_total_count"
@@ -41,7 +41,7 @@ end
 parsed_args = parse_commandline()
 input_file = parsed_args["input_file"]
 nu = parsed_args["nu"]
-I = parsed_args["I"]
+I = int(parsed_args["I"])
 output_file = parsed_args["output_file"]
 kmer_count_path = parsed_args["kmer_count_path"]
 
