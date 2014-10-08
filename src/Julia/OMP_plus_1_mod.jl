@@ -42,7 +42,8 @@ while ( (abs(sum(gamma)-1) > nu)  && (it < I) )
     
     # Step 3 of the 'Iterations of Algorithm 1'
     tic()
-    e = Xtrans*r;
+    #e = Xtrans*r;
+    e=BLAS.gemv('N',1.,Xtrans, r);
     toc()
     e[T]=0;
 
