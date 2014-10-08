@@ -14,7 +14,7 @@ function OMP_plus_1_mod(X::Matrix,mu::Vector,nu::Real=.01,I::Integer=100)
 
 
 ## Algorithm 1 starts here
-
+#include("lsqnonneg.jl") #Don't need to do this as I will include lsqnonneg in the main script
 
 ## Finding the l_2 norms of columns of X
 
@@ -58,7 +58,7 @@ while ( (abs(sum(gamma)-1) > nu)  && (it < I) )
     
     # Step 5 of the 'Iterations of Algorithm 1'
     Xp = X[:,T];
-    (gamma_temp,dummy,dummy) = lsqnonneg(Xp,mu);
+    gamma_temp = lsqnonneg(Xp,mu);
     for index=1:length(T)
         gamma[T[index]] = gamma_temp[index]
     end
