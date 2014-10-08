@@ -69,7 +69,7 @@ x = x/sum(x);
 
 #Write the output to file
 output_level = 0; #Since we don't have hypothetical organisms
-ConvertToCAMIOutputFunction(x, "../../data/trainset7_SEK_taxonomy.txt", output_level, output_file)
+ConvertToCAMIOutput(x, "../../data/trainset7_SEK_taxonomy.txt", output_level, output_file)
 
 
 
