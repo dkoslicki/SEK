@@ -37,13 +37,13 @@ it=0;
 
 
 ## Iterations
-#Xtrans=X';#pre-compute transpose
+Xtrans=X';#pre-compute transpose
 while ( (abs(sum(gamma)-1) > nu)  && (it < I) )
     
     # Step 3 of the 'Iterations of Algorithm 1'
     tic()
     #e = Xtrans*r;
-    e=BLAS.gemv('T',1.,X, r);
+    e=BLAS.gemv('N',1.,Xtrans, r);
     toc()
     e[T]=0;
 
