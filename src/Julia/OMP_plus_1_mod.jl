@@ -41,10 +41,8 @@ Xtrans=X';#pre-compute transpose
 while ( (abs(sum(gamma)-1) > nu)  && (it < I) )
     
     # Step 3 of the 'Iterations of Algorithm 1'
-    tic()
     #e = Xtrans*r;
     e=BLAS.gemv('N',1.,Xtrans, r);
-    toc()
     e[T]=0;
 
     for index=1:length(e) #e[find(e <= zeros(size(e)))]=0;
@@ -65,12 +63,11 @@ while ( (abs(sum(gamma)-1) > nu)  && (it < I) )
     for index=1:length(T)
         gamma[T[index]] = gamma_temp[index]
     end
-    tic()
     r = mu - Xp*gamma[T];
-    toc()
     
     # Increment of iterations count
     it=it+1;
+    print(it)
 
 end
 
