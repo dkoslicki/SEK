@@ -67,7 +67,7 @@ while ( (abs(sum(gamma)-1) > nu)  && (it < I) )
     
     # Increment of iterations count
     it=it+1;
-    print(it)
+    print("$(it)\n")
 
 end
 
