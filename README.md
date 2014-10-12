@@ -1,6 +1,3 @@
-#Warning
-*This repository is still in development, please check back soon*
-
 #SEK
 
 SEK is a sparsity exploiting k-mer-based estimation of bacterial community composition estimation tool.
@@ -30,3 +27,17 @@ After cloning and installing the [dna\_utils](http://github.com/EESI/dna-utils/)
 
 
 ## Usage ##
+The code only works on FASTA files (not FASTQ or any other format).
+Here's an example:
+```
+julia SEK -i /path/to/FASTA.fa -o /path/to/Output.tsv
+```
+
+Other options are available, see `julia SEK.jl -h`.
+
+The output format is consistent with the (CAMI challenge)[http://www.cami-challenge.org/] and is similar to the output produced by (MetaPhlAn)[http://huttenhower.sph.harvard.edu/metaphlan].
+
+## Further Notes ##
+If your installation of dna_utils results in the executable being located in a non-standard location, specify this location using the option ` -k /path/to/./kmer_counts_per_sequence `
+
+It is very important that your installation of BLAS matches the architecture of your hardware (if not, significant increases in computation time might be observed). We recommend using OpenBLAS.
