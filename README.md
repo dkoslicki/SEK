@@ -35,7 +35,7 @@ julia SEK -i /path/to/FASTA.fa -o /path/to/Output.tsv
 
 Other options are available, see `julia SEK.jl -h`.
 
-The output format is consistent with the (CAMI challenge)[http://www.cami-challenge.org/] and is similar to the output produced by (MetaPhlAn)[http://huttenhower.sph.harvard.edu/metaphlan].
+The output format is consistent with the [CAMI challenge](http://www.cami-challenge.org/) and is similar to the output produced by [MetaPhlAn](http://huttenhower.sph.harvard.edu/metaphlan).
 
 ## Further Notes ##
 If your installation of dna_utils results in the executable being located in a non-standard location, specify this location using the option ` -k /path/to/./kmer_counts_per_sequence `
